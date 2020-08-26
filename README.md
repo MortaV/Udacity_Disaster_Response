@@ -29,7 +29,7 @@ The goal of this project is to build an app that can be used with disaster respo
 
 The app has 2 graphs on the first page (please see the screenshot below).
 
-![ScreenShot](/screenshots/data analysis.png)
+![ScreenShot]('/screenshots/data analysis.png')
 
 You need to put a message you want to classify to the field (1) and press "Classify Message" (3). You will see the results instead of the graphs (3). If the genre is filled with green, it means the message is classified like that.
 
