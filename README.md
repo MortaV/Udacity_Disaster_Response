@@ -2,11 +2,8 @@
 
 1. [Summary](#summary)
 2. [How to use it](#how-to-use-it)
-2. [Main contacts](#main-contacts)
-3. [Where is everything stored](#where-is-everything-stored)
-4. [Requirements](#requirements)
-5. [Main files](#main-files)
-6. [Results](#results)
+3. [Main files](#main-files)
+6. [Acknowledgements](#acknowledgements)
 
 ## Summary
 
@@ -30,47 +27,33 @@ The goal of this project is to build an app that can be used with disaster respo
 
 ### Instructions for using the app:
 
+The app has 2 graphs on the first page (please see the screenshot below).
+
 ![ScreenShot](/screenshots/data analysis.png)
+
+You need to put a message you want to classify to the field (1) and press "Classify Message" (3). You will see the results instead of the graphs (3). If the genre is filled with green, it means the message is classified like that.
 
 ![ScreenShot](/screenshots/messages.png)
 
-## Main contacts
-
-Client side:
-
-| Client name | Email  | Role in the project |
-| :--- | :---: | :---: |
-| Name Surname | email@email.com | Ad manager |
-
-Internal:
-
-| Name | Email  | Role in the project |
-| :--- | :---: | :---: |
-| Name Surname | email@email.com | Project manager |
-
-## Where is everything stored
-
-Graphs: Link to Teams or Google Drive repository <br>
-Data: Kindred database (connector is in the code, credentials are needed)
-
-## Requirements
-
-Python packages:
-- chart_studio==1.0.0
-- pandas==1.0.1
-- plotly==4.5.2
-- numpy==1.18.1
-- scipy==1.3.2
-- statsmodels==0.11.1
-
 ## Main files
 
-- **.gitignore** - file with the list of directories/files that should be not pushed to git with git push.
-- **README.md** - main information about the projects
-- **requirements.txt** - file with required Python projects
+*app* folder:
 
-## Results
+- **run.py** - main script for running the app. You can find codes for the graphs in there.
+- **templates** - folder with the files for the UI of the app.
 
-Add a short summary of the results of your investigation or project.
+*data* folder:
 
+- **disaster_categories.csv** - data for the categories.
+- **disaster_messages.csv** - data with messages.
+- **DisasterResponse.db** - database created with process_data.py.
+- **process_data.py** - python scripts for cleaning, joining and pushing the data to the database.
 
+*models* folder:
+
+- **train_classifier.py** - python scripts for training the model on the data from the DisasterResponse.db. 
+- **classifier.pkl** - NOT INCLUDED. The file is too big to store it on GitHub, but this is hgow the file created by train_classifier.py will be named.
+
+## Acknowledgements
+
+This is a project from Udacity Data Science nanodegree.
