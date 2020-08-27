@@ -63,6 +63,9 @@ def tokenize(text):
         clean_tokens - a list of tokenized words
     """
     tokens = word_tokenize(text)
+    # remove stopwords
+    stop = set(stopwords.words('english'))
+    tokens = [token for token in tokens if token not in stop]
     lemmatizer = WordNetLemmatizer()
     
     clean_tokens = []
@@ -89,8 +92,7 @@ def build_model():
     # parameters for the Grid Search
     parameters = {
         'clf__estimator__n_estimators': [3, 5, 10, 15],
-        'clf__estimator__max_depth': [None, 3, 5],
-        'vect__stop_words': [None, stopwords.words('english')]
+        'clf__estimator__max_depth': [None, 3, 5]
     }
     
     # Grid Search
