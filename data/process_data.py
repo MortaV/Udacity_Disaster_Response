@@ -50,6 +50,10 @@ def clean_data(df):
     # remove duplicated values
     df = df[~df.duplicated()]
     
+    # remove rows with values not in the 0 or 1 from the target values
+    filter_bad_index = df[df.columns[3:]].isin([0, 1]).all(axis=1)
+    df = df.loc[filter_bad_index]
+    
     return df
 
 def save_data(df, database_filename):
@@ -64,7 +68,7 @@ def save_data(df, database_filename):
         a file for sqlite created
     """
     engine = create_engine('sqlite:///'+database_filename)
-    df.to_sql('messages', engine, index=False)
+    df.to_sql('messages', engine, index=False, if_exists='replace')
 
 
 def main():

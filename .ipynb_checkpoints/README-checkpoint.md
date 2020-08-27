@@ -9,6 +9,8 @@
 
 The goal of this project is to build an app that can be used with disaster response messages. This is a project from Udacity course for Data Science.
 
+All codes are stored on https://github.com/MortaV/Udacity_Disaster_Response.
+
 ## How to use it
 
 ### Instructions for setting up the app:
